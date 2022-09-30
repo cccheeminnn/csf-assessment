@@ -1,0 +1,13 @@
+<h1>Orders for {{ email }}</h1>
+<h4 style="margin: 10px; color: red">{{ message }}</h4>
+
+<div *ngIf="orders != undefined">
+    <div *ngFor="let order of orders.data" style="border: 1px solid blue; border-radius: 10px; margin: 10px;">
+        <h3 style="margin-left: 1cm;">Order Id: {{ order.orderId }}</h3>
+        <h3 style="margin-left: 1cm;">{{ order.amount | currency }}</h3>
+    </div>
+</div>
+
+<div style="text-align: right; margin: 10px;">
+    <button [routerLink]="['/']">Back to Ordering</button>
+</div>
